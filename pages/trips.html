@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Trips</title>
+</head>
+<body>
+
+<h1>Saved Trips</h1>
+
+<a href="../index.html">Back</a>
+
+<div id="tripList"></div>
+
+<script>
+  let trips = JSON.parse(localStorage.getItem("trips")) || [];
+
+  let container = document.getElementById("tripList");
+
+  if (trips.length === 0) {
+    container.innerHTML = "<p>No trips saved yet.</p>";
+  } else {
+    trips.forEach(trip => {
+      let p = document.createElement("p");
+      p.innerText = trip.name + " - " + trip.destination;
+      container.appendChild(p);
+    });
+  }
+</script>
+
+</body>
+</html>
