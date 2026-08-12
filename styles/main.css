@@ -779,3 +779,68 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* ================================
+   ABOUT PAGE
+================================ */
+
+.about-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 40px;
+}
+
+.about-section h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.about-section .subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: #cfd3ff;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.about-card {
+    padding: 30px;
+    border-radius: 16px;
+    background: #1d1e30;
+    border: 1px solid #30334d;
+    box-sizing: border-box;
+}
+
+.about-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    .about-section h1 {
+        font-size: 36px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+}
