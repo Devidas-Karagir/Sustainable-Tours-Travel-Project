@@ -1,29 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Nexus Tours</title>
-  <link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus Tours | Sustainable Travel</title>
+
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
 
-  <h1>Nexus Tours</h1>
+    <!-- NAVBAR -->
+    <nav class="navbar">
 
-  <!-- ADD TRIP -->
-  <section style="padding:40px; background:#111; color:white;">
-    <h2>Add Your Trip</h2>
+        <div class="logo">
+            Nexus Tours
+        </div>
 
-    <input id="tripName" placeholder="Trip Name"><br><br>
-    <input id="destination" placeholder="Destination"><br><br>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pages/tours.html">Tours</a>
+            <a href="pages/trips.html">My Trips</a>
+            <a href="pages/services.html">Services</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/contact.html">Contact</a>
+        </div>
 
-    <button onclick="saveTrip()">Save Trip</button>
+    </nav>
 
-    <br><br>
-    <a href="pages/trips.html" style="color:cyan;">View Saved Trips</a>
-  </section>
 
-  <script src="js/script.js"></script>
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                SUSTAINABLE TRAVEL MADE SIMPLE
+            </p>
+
+            <h1>
+                Explore the World.
+                <br>
+                Travel Responsibly.
+            </h1>
+
+            <p>
+                Plan your next journey with Nexus Tours.
+                Discover destinations, save your trips and
+                make every journey memorable.
+            </p>
+
+            <a href="#add-trip" class="primary-btn">
+                Plan Your Trip
+            </a>
+
+            <a href="pages/trips.html" class="secondary-btn">
+                View Saved Trips
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div class="section-heading">
+            <p>WHY NEXUS TOURS?</p>
+            <h2>Travel Smarter</h2>
+        </div>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+
+                <h3>Explore Destinations</h3>
+
+                <p>
+                    Discover exciting destinations and plan
+                    memorable journeys around the world.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+
+                <h3>Sustainable Travel</h3>
+
+                <p>
+                    Make responsible travel choices and
+                    explore destinations sustainably.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🧳</div>
+
+                <h3>Manage Your Trips</h3>
+
+                <p>
+                    Create, view, edit and delete your travel
+                    plans from one simple dashboard.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD TRIP -->
+    <section class="trip-section" id="add-trip">
+
+        <div class="trip-form-container">
+
+            <div class="form-info">
+
+                <p class="small-title">
+                    START YOUR JOURNEY
+                </p>
+
+                <h2>
+                    Plan Your Next Trip
+                </h2>
+
+                <p>
+                    Enter your trip details below and save
+                    them directly to your travel dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="trip-form">
+
+                <label for="tripName">
+                    Trip Name
+                </label>
+
+                <input
+                    type="text"
+                    id="tripName"
+                    placeholder="Example: Goa Vacation"
+                >
+
+
+                <label for="destination">
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="Example: Goa"
+                >
+
+
+                <button
+                    class="save-btn"
+                    onclick="saveTrip()"
+                >
+                    Save Trip
+                </button>
+
+
+                <a
+                    href="pages/trips.html"
+                    class="view-trips-link"
+                >
+                    View My Saved Trips →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <h3>Nexus Tours</h3>
+
+            <p>
+                Explore more. Travel responsibly.
+            </p>
+        </div>
+
+        <p>
+            © 2026 Nexus Tours
+        </p>
+
+    </footer>
+
+
+    <!-- YOUR EXISTING FASTAPI JAVASCRIPT -->
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>

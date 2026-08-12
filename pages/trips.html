@@ -1,32 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saved Trips</title>
+    <meta charset="UTF-8">
+    <title>Saved Trips</title>
 </head>
+
 <body>
 
-<h1>Saved Trips</h1>
+    <h1>Saved Trips</h1>
 
-<a href="../index.html">Back</a>
+    <a href="../index.html">Back</a>
 
-<div id="tripList"></div>
+    <br><br>
 
-<script>
-  let trips = JSON.parse(localStorage.getItem("trips")) || [];
+    <div id="tripList"></div>
 
-  let container = document.getElementById("tripList");
+    <script>
 
-  if (trips.length === 0) {
-    container.innerHTML = "<p>No trips saved yet.</p>";
-  } else {
-    trips.forEach(trip => {
-      let p = document.createElement("p");
-      p.innerText = trip.name + " - " + trip.destination;
-      container.appendChild(p);
-    });
-  }
-</script>
+        const API_URL = "http://127.0.0.1:8000/trips";
+
+        // Load all trips
+        function loadTrips() {
+
+            fetch(API_URL)
+                .then(response => response.json())
+                .then(trips => {
+
+                    const container =
+                        document.getElementById("tripList");
+
+                    container.innerHTML = "";
+
+                    if (trips.length === 0) {
+                        container.innerHTML =
+                            "<p>No trips saved yet.</p>";
+                        return;
+                    }
+
+                    trips.forEach(trip => {
+
+                        const div = document.createElement("div");
+
+                        div.innerHTML = `
+                            <p>
+                                <strong>Trip:</strong> ${trip.name}
+                                |
+                                <strong>Destination:</strong> ${trip.destination}
+
+                                <button onclick="editTrip(
+                                    ${trip.id},
+                                    '${trip.name}',
+                                    '${trip.destination}'
+                                )">
+                                    Edit
+                                </button>
+
+                                <button onclick="deleteTrip(${trip.id})">
+                                    Delete
+                                </button>
+                            </p>
+                        `;
+
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading trips:", error);
+                });
+        }
+
+
+        // Edit trip
+        function editTrip(id, currentName, currentDestination) {
+
+            const newName = prompt(
+                "Enter new trip name:",
+                currentName
+            );
+
+            if (newName === null) {
+                return;
+            }
+
+            const newDestination = prompt(
+                "Enter new destination:",
+                currentDestination
+            );
+
+            if (newDestination === null) {
+                return;
+            }
+
+            fetch(`${API_URL}/${id}`, {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: newName,
+                    destination: newDestination
+                })
+
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                alert(data.message);
+
+                loadTrips();
+            })
+            .catch(error => {
+                console.error("Error updating trip:", error);
+            });
+        }
+
+
+        // Delete trip
+        function deleteTrip(id) {
+
+            const confirmDelete =
+                confirm("Are you sure you want to delete this trip?");
+
+            if (!confirmDelete) {
+                return;
+            }
+
+            fetch(`${API_URL}/${id}`, {
+                method: "DELETE"
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                alert(data.message);
+
+                loadTrips();
+            })
+            .catch(error => {
+                console.error("Error deleting trip:", error);
+            });
+        }
+
+
+        // Load trips when page opens
+        loadTrips();
+
+    </script>
 
 </body>
 </html>
