@@ -8,241 +8,561 @@
     <title>About | Nexus Tours</title>
 
     <link rel="stylesheet" href="../styles/main.css">
+
+    <style>
+        /* ABOUT PAGE ONLY */
+
+        .about-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 30px;
+        }
+
+        .about-hero {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .about-hero .badge {
+            display: inline-block;
+            color: #00e5ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .about-hero h1 span {
+            background: linear-gradient(90deg, #00e5ff, #7657ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #bfc2d8;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .section-label {
+            color: #00e5ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .intro-text h2 {
+            font-size: 40px;
+            margin: 15px 0 20px;
+        }
+
+        .intro-text p {
+            color: #bfc2d8;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .intro-visual {
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .globe {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            background: linear-gradient(135deg, #00d9ff, #6356e8);
+            box-shadow: 0 0 60px rgba(0, 217, 255, 0.2);
+        }
+
+        .floating-card {
+            position: absolute;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: #1c1e31;
+            border: 1px solid #353850;
+        }
+
+        .card-one {
+            top: 30px;
+            left: 20px;
+        }
+
+        .card-two {
+            right: 10px;
+            top: 100px;
+        }
+
+        .card-three {
+            bottom: 30px;
+            left: 50px;
+        }
+
+        .about-features {
+            padding: 80px 0;
+        }
+
+        .about-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .about-heading h2 {
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .about-feature-card {
+            padding: 28px;
+            border-radius: 16px;
+            background: #17192a;
+            border: 1px solid #30334d;
+        }
+
+        .about-feature-card .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .about-feature-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .about-feature-card p {
+            color: #bfc2d8;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 50px 0;
+            border-top: 1px solid #30334d;
+            border-bottom: 1px solid #30334d;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px 15px;
+            border-right: 1px solid #30334d;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h2 {
+            color: #00e5ff;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #aeb1c8;
+        }
+
+        .tech-section {
+            text-align: center;
+            padding: 70px 0;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .tech-list span {
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: #191b2c;
+            border: 1px solid #343750;
+            color: #dce0ff;
+        }
+
+        .developer {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            background: #17192a;
+            border: 1px solid #30334d;
+            margin: 70px 0;
+        }
+
+        .developer-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00d9ff, #7055ff);
+            font-size: 30px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .developer h2 {
+            margin: 8px 0;
+        }
+
+        .developer .role {
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        .developer p {
+            color: #bfc2d8;
+            line-height: 1.7;
+        }
+
+        .about-cta {
+            text-align: center;
+            padding: 70px 30px;
+            margin-bottom: 70px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #181a2d, #222449);
+            border: 1px solid #353850;
+        }
+
+        .about-cta h2 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .about-cta p {
+            color: #bfc2d8;
+            margin-bottom: 25px;
+        }
+
+        .about-cta a {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #00d9ff, #7055ff);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 850px) {
+
+            .about-page {
+                padding: 40px 20px;
+            }
+
+            .about-hero h1 {
+                font-size: 44px;
+            }
+
+            .about-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .developer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid #30334d;
+            }
+
+            .about-hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">NEXUS TOURS</div>
+
+        <div class="logo">
+            NEXUS TOURS
+        </div>
 
         <div class="nav-links">
             <a href="../index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="tours.html">Tours</a>
-            <a href="about.html" class="active">About</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
+
     </nav>
 
 
-    <!-- HERO -->
-    <section class="about-hero">
+    <main class="about-page">
 
-        <div class="hero-badge">
-            🌍 SUSTAINABLE TRAVEL PLATFORM
-        </div>
+        <!-- HERO -->
+        <section class="about-hero">
 
-        <h1>
-            Travel Better.<br>
-            <span>Explore Responsibly.</span>
-        </h1>
+            <div class="badge">
+                🌍 SUSTAINABLE TRAVEL PLATFORM
+            </div>
 
-        <p>
-            Nexus Tours is a travel web application designed to make
-            trip planning simple, organized and more sustainable.
-        </p>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section class="about-intro">
-
-        <div class="intro-text">
-
-            <span class="section-label">ABOUT THE PROJECT</span>
-
-            <h2>
-                More than a travel website.
-            </h2>
+            <h1>
+                Travel Better.<br>
+                <span>Explore Responsibly.</span>
+            </h1>
 
             <p>
-                Nexus Tours combines a modern travel interface with
-                backend technologies to help users explore destinations
-                and manage their travel plans.
+                Nexus Tours is a travel web application designed
+                to make trip planning simple, organized and more
+                sustainable.
             </p>
 
-            <p>
-                The project includes trip management, REST APIs,
-                database integration and a responsive web interface.
-            </p>
-
-        </div>
+        </section>
 
 
-        <div class="intro-visual">
+        <!-- INTRO -->
+        <section class="about-intro">
 
-            <div class="globe">
-                🌎
-            </div>
+            <div class="intro-text">
 
-            <div class="floating-card card-one">
-                📍 Explore
-            </div>
+                <span class="section-label">
+                    ABOUT THE PROJECT
+                </span>
 
-            <div class="floating-card card-two">
-                🌱 Sustainable
-            </div>
-
-            <div class="floating-card card-three">
-                ✈️ Travel
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FEATURES -->
-    <section class="features-section">
-
-        <div class="section-heading">
-            <span class="section-label">WHAT MAKES IT DIFFERENT</span>
-
-            <h2>
-                Built for smarter journeys
-            </h2>
-        </div>
-
-
-        <div class="feature-grid">
-
-            <div class="feature-card">
-
-                <div class="feature-icon">🌍</div>
-
-                <h3>Explore</h3>
+                <h2>
+                    More than a travel website.
+                </h2>
 
                 <p>
-                    Discover destinations and organize your
-                    travel ideas in one place.
+                    Nexus Tours combines a modern travel interface
+                    with backend technologies to help users explore
+                    destinations and manage their travel plans.
+                </p>
+
+                <p>
+                    The project includes trip management, REST APIs,
+                    database integration and a responsive web interface.
                 </p>
 
             </div>
 
 
-            <div class="feature-card">
+            <div class="intro-visual">
 
-                <div class="feature-icon">🌱</div>
+                <div class="globe">
+                    🌎
+                </div>
 
-                <h3>Sustainable</h3>
+                <div class="floating-card card-one">
+                    📍 Explore
+                </div>
 
-                <p>
-                    Encouraging responsible travel choices
-                    and sustainable tourism.
-                </p>
+                <div class="floating-card card-two">
+                    🌱 Sustainable
+                </div>
+
+                <div class="floating-card card-three">
+                    ✈️ Travel
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="about-features">
+
+            <div class="about-heading">
+
+                <span class="section-label">
+                    WHAT MAKES IT DIFFERENT
+                </span>
+
+                <h2>
+                    Built for smarter journeys
+                </h2>
 
             </div>
 
 
-            <div class="feature-card">
+            <div class="feature-grid">
 
-                <div class="feature-icon">⚡</div>
+                <div class="about-feature-card">
+                    <div class="icon">🌍</div>
 
-                <h3>Simple</h3>
+                    <h3>Explore</h3>
 
-                <p>
-                    A clean interface designed to make trip
-                    management easy.
-                </p>
+                    <p>
+                        Discover destinations and organize
+                        your travel ideas in one place.
+                    </p>
+                </div>
+
+
+                <div class="about-feature-card">
+                    <div class="icon">🌱</div>
+
+                    <h3>Sustainable</h3>
+
+                    <p>
+                        Encouraging responsible travel choices
+                        and sustainable tourism.
+                    </p>
+                </div>
+
+
+                <div class="about-feature-card">
+                    <div class="icon">⚡</div>
+
+                    <h3>Simple</h3>
+
+                    <p>
+                        A clean interface designed to make
+                        trip management easy.
+                    </p>
+                </div>
+
+
+                <div class="about-feature-card">
+                    <div class="icon">🔐</div>
+
+                    <h3>Reliable Backend</h3>
+
+                    <p>
+                        FastAPI REST services with database
+                        integration for managing trips.
+                    </p>
+                </div>
 
             </div>
 
+        </section>
 
-            <div class="feature-card">
 
-                <div class="feature-icon">🔐</div>
+        <!-- STATS -->
+        <section class="stats">
 
-                <h3>Reliable Backend</h3>
-
-                <p>
-                    FastAPI REST services with database
-                    integration for managing trips.
-                </p>
-
+            <div class="stat">
+                <h2>CRUD</h2>
+                <p>Trip Management</p>
             </div>
 
-        </div>
+            <div class="stat">
+                <h2>REST</h2>
+                <p>API Architecture</p>
+            </div>
 
-    </section>
+            <div class="stat">
+                <h2>SQLite</h2>
+                <p>Database</p>
+            </div>
 
+            <div class="stat">
+                <h2>FastAPI</h2>
+                <p>Backend</p>
+            </div>
 
-    <!-- PROJECT STATS -->
-    <section class="stats-section">
-
-        <div class="stat">
-            <h2>CRUD</h2>
-            <p>Trip Management</p>
-        </div>
-
-        <div class="stat">
-            <h2>REST</h2>
-            <p>API Architecture</p>
-        </div>
-
-        <div class="stat">
-            <h2>SQLite</h2>
-            <p>Database</p>
-        </div>
-
-        <div class="stat">
-            <h2>FastAPI</h2>
-            <p>Backend</p>
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- TECHNOLOGY -->
-    <section class="technology-section">
+        <!-- TECH STACK -->
+        <section class="tech-section">
 
-        <div class="section-heading">
-            <span class="section-label">TECH STACK</span>
+            <span class="section-label">
+                TECH STACK
+            </span>
 
             <h2>
                 Technologies behind Nexus Tours
             </h2>
-        </div>
+
+            <div class="tech-list">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>SQLAlchemy</span>
+                <span>SQLite</span>
+                <span>REST API</span>
+                <span>Swagger UI</span>
+
+            </div>
+
+        </section>
 
 
-        <div class="tech-list">
-
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>Python</span>
-            <span>FastAPI</span>
-            <span>SQLAlchemy</span>
-            <span>SQLite</span>
-            <span>REST API</span>
-            <span>Swagger UI</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- DEVELOPER -->
-    <section class="developer-section">
-
-        <div class="developer-card">
+        <!-- DEVELOPER -->
+        <section class="developer">
 
             <div class="developer-avatar">
                 DK
             </div>
 
-            <div class="developer-info">
+            <div>
 
                 <span class="section-label">
                     DEVELOPER
                 </span>
 
                 <h2>
-                    Devidas Karagir
+                    Devidas G. Karagir
                 </h2>
 
-                <p class="developer-role">
+                <p class="role">
                     BCA (AI & ML) | Developer
                 </p>
 
@@ -254,31 +574,31 @@
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CTA -->
-    <section class="about-cta">
+        <!-- CTA -->
+        <section class="about-cta">
 
-        <span class="section-label">
-            START YOUR JOURNEY
-        </span>
+            <span class="section-label">
+                START YOUR JOURNEY
+            </span>
 
-        <h2>
-            Ready to explore?
-        </h2>
+            <h2>
+                Ready to explore?
+            </h2>
 
-        <p>
-            Plan your next adventure with Nexus Tours.
-        </p>
+            <p>
+                Plan your next adventure with Nexus Tours.
+            </p>
 
-        <a href="../index.html" class="cta-button">
-            Explore Nexus Tours →
-        </a>
+            <a href="../index.html">
+                Explore Nexus Tours →
+            </a>
 
-    </section>
+        </section>
+
+    </main>
 
 
     <!-- FOOTER -->
@@ -296,3 +616,4 @@
 </body>
 
 </html>
+```

@@ -67,6 +67,8 @@ header {
 
 .nav-links {
     display: flex;
+    align-items: center;
+    gap: 28px;
     list-style: none;
 }
 
@@ -843,4 +845,24 @@ footer {
         grid-template-columns: 1fr;
     }
 
+}
+
+/* ===== PAGE CONTENT SPACING ===== */
+
+.navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.about-hero,
+.about-intro,
+.features-section,
+.stats-section,
+.technology-section,
+.developer-section,
+.about-cta {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
